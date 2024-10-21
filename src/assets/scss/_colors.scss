@@ -1,0 +1,267 @@
+@import "./themes/themeLight.scss";
+@import "./themes/themeDark.scss";
+/* text */
+$text-brand: #bc1a22;
+$text-dark-gray: #222222;
+$text-light-gray: #666666;
+$text-gray: #4c4c4c;
+$text-black: #000000;
+$text-info: #0074ad;
+$text-positive: #3a863b;
+$text-negative: #bc1a22;
+$text-warning: #a86800;
+$text-brand-inverted: #ffffff;
+$text-white: #ffffff;
+
+/* brand */
+$brand-00: #a2161e;
+$brand-10: #bc1a22;
+$brand-20: #dc1e28;
+$brand-30: #ea6269;
+$brand-70: #f8c9cc;
+$brand-80: #fadbdd;
+$brand-90: #f8f1f1;
+$brand-neutral-00: #25292b;
+$brand-neutral-10: #30393f;
+$brand-85: #f5eded;
+
+/* neutral */
+$neutral-10: #000000;
+$neutral-15: #222222;
+$neutral-20: #333333;
+$neutral-30: #4c4c4c;
+$neutral-40: #666666;
+$neutral-40-opacity-90: rgba($neutral-40, 0.9);
+$neutral-50: #b3b3b3;
+$neutral-60: #cccccc;
+$neutral-65: #c3c3c3;
+$neutral-70: #dddddd;
+$neutral-80: #e5e5e5;
+$neutral-85: #ededed;
+$neutral-90: #f5f5f5;
+$neutral-95: #fafafa;
+$neutral-100: #ffffff;
+
+/* accent */
+$accent-teal: #4db6ac;
+$accent-light-green: #aed581;
+$accent-blue-grey: #90a4ae;
+$accent-red: #e57373;
+$accent-light-blue: #4fc3f7;
+$accent-orange: #ffb74d;
+$accent-green: #81c784;
+$accent-pink: #f06292;
+$accent-purple: #ba68c8;
+$accent-deep-purple: #9575cd;
+$accent-indigo: #7986cb;
+$accent-blue: #64b5f6;
+$accent-cyan: #4dd0e1;
+$accent-lime: #dce775;
+$accent-brown: #a1887f;
+$accent-grey: #e0e0e0;
+
+/* icons */
+$icons-teal: #00796b;
+$icons-light-green: #33691e;
+$icons-blue-grey: #546e7a;
+$icons-red: #bf360c;
+$icons-light-blue: #0277bd;
+$icons-orange: #a86800;
+$icons-green: #2e7d32;
+$icons-pink: #d81b60;
+$icons-purple: #9c27b0;
+$icons-deep-purple: #673ab7;
+$icons-indigo: #3f51b5;
+$icons-blue: #1976d2;
+$icons-cyan: #00838f;
+$icons-lime: #827717;
+$icons-brown: #795548;
+$icons-grey: #757575;
+
+/* theme-positive */
+$theme-positive-10: #49a333;
+$theme-positive-30: #8ad577;
+$theme-positive-20: #57c33c;
+$theme-positive-70: #d6f1d0;
+$theme-positive-90: #f1faef;
+$theme-positive-80: #e4f5e0;
+$theme-positive-85: #c6e6c7;
+$theme-positive-100: #f1f9f1;
+
+/* theme-warning */
+$theme-warning-20: #ee9f07;
+$theme-warning-10: #bc7e06;
+$theme-warning-70: #fdeac4;
+$theme-warning-80: #fef1d7;
+$theme-warning-90: #fef8eb;
+$theme-warning-30: #f9b42f;
+
+/* $theme-info */
+$theme-info-10: #0074ad;
+$theme-info-20: #008cd2;
+$theme-info-70: #c2ebff;
+$theme-info-90: #ebf8ff;
+$theme-info-30: #00aaff;
+$theme-info-80: #d6f1ff;
+
+/* tags */
+/* tag fill color */
+$tagfill-red: #ffcdd2;
+$tagfill-pink: #f8bbd0;
+$tagfill-purple: #e1bee7;
+$tagfill-deep-purple: #d1c4e9;
+$tagfill-indigo: #c5cae9;
+$tagfill-blue: #bbdefb;
+$tagfill-light-blue: #b3e5fc;
+$tagfill-cyan: #b2ebf2;
+$tagfill-teal: #b2dfdb;
+$tagfill-green: #c8e6c9;
+$tagfill-light-green: #dcedc8;
+$tagfill-lime: #f0f4c3;
+$tagfill-yellow: #fff9c4;
+$tagfill-amber: #ffecb3;
+$tagfill-orange: #ffe0b2;
+$tagfill-deep-orange: #ffccbc;
+$tagfill-brown: #d7ccc8;
+$tagfill-grey: #f5f5f5;
+$tagfill-blue-grey: #cfd8dc;
+$tagfill-white: #ffffff;
+$tagfill-deep-teal: #b2dfdb;
+$tagfill-deep-indigo: #c5cae9;
+
+/* tag text color */
+$tagtxt-red: #741111;
+$tagtxt-pink: #6e0c40;
+$tagtxt-purple: #3c1071;
+$tagtxt-deep-purple: #151c66;
+$tagtxt-indigo: #151c66;
+$tagtxt-blue: #0b3a83;
+$tagtxt-light-blue: #01467d;
+$tagtxt-cyan: #004d51;
+$tagtxt-teal: #003e34;
+$tagtxt-green: #164c1a;
+$tagtxt-light-green: #295518;
+$tagtxt-lime: #524b0f;
+$tagtxt-yellow: #6f390a;
+$tagtxt-amber: #733200;
+$tagtxt-orange: #7c2c00;
+$tagtxt-deep-orange: #782208;
+$tagtxt-brown: #321f1c;
+$tagtxt-grey: #1b1b1b;
+$tagtxt-blue-grey: #1f282d;
+$tagtxt-dark: #272e33;
+$tagtxt-deep-teal: #003e34;
+$tagtxt-deep-indigo: #151c66;
+
+/* other */
+$abs-brands-cloud-20: #00aaa0;
+$abs-brands-cloud-70: #c2ebe8;
+
+$theme-negative-90: #faeded;
+$theme-negative-70: #f8c9cc;
+
+$globals-tags-100-md-green: #c8e6c9;
+$globals-dedicated-font-for-tags-green: #164c1a;
+
+$globals-tags-100-md-yellow: #fff9c4;
+$globals-dedicated-font-for-tags-yellow: #6f390a;
+
+$globals-tags-100-md-blue: #bbdefb;
+$globals-dedicated-font-for-tags-blue: #0b3a83;
+
+$globals-tags-100-md-cyan: #b2ebf2;
+$globals-dedicated-font-for-tags-cyan: #004d51;
+
+$globals-tags-100-md-light-blue: #b3e5fc;
+$globals-dedicated-font-for-tags-light-blue: #01467d;
+
+$globals-tags-100-md-deep-orange: #ffccbc;
+$globals-dedicated-font-for-tags-deep-orange: #782208;
+
+$globals-tags-100-md-orange: #ffe0b2;
+$globals-dedicated-font-for-tags-orange: #7c2c00;
+
+$globals-tags-100-md-amber: #ffecb3;
+$globals-dedicated-font-for-tags-amber: #733200;
+
+$globals-tags-100-md-lime: #f0f4c3;
+$globals-dedicated-font-for-tags-lime: #524b0f;
+
+$globals-tags-100-md-teal: #b2dfdb;
+$globals-dedicated-font-for-tags-teal: #003e34;
+
+$globals-tags-100-md-light-green: #dcedc8;
+$globals-dedicated-font-for-tags-light-green: #295518;
+
+$globals-tags-100-md-red: #ffcdd2;
+$globals-dedicated-font-for-tags-red: #741111;
+
+$globals-tags-100-md-blue-grey: #cfd8dc;
+$globals-dedicated-font-for-tags-blue-grey: #1f282d;
+
+$globals-tags-100-md-brown: #d7ccc8;
+$globals-dedicated-font-for-tags-brown: #321f1c;
+
+$globals-tags-100-md-indigo: #c5cae9;
+$globals-dedicated-font-for-tags-indigo: #151c66;
+
+$globals-dedicated-font-for-tags-pink: #6e0c40;
+
+$globals-tags-100-md-purple: #e1bee7;
+$globals-dedicated-font-for-tags-purple: #3c1071;
+
+$globals-tags-100-md-deep-purple: #d1c4e9;
+$globals-dedicated-font-for-tags-deep-purple: #281676;
+
+$teal900: #004d40;
+$teal900Round: #e0f2f1;
+
+//avatarfill
+
+$avatartext-red: #b71c1c;
+$avatartext-pink: #880e4f;
+$avatartext-purple: #4a148c;
+$avatartext-deep-purple: #311b92;
+$avatartext-indigo: #1a237e;
+$avatartext-blue: #0d47a1;
+$avatartext-light-blue: #01579b;
+$avatartext-cyan: #006064;
+$avatartext-teal: #004d40;
+$avatartext-green: #1b5e20;
+$avatartext-light-green: #33691e;
+$avatartext-lime: #827717;
+$avatartext-yellow: #bf5e08;
+$avatartext-amber: #cc5a03;
+$avatartext-orange: #d04b02;
+$avatartext-deep-orange: #bf360c;
+$avatartext-brown: #3e2723;
+$avatartext-gray: #212121;
+$avatartext-blue-gray: #263238;
+
+$avatarfill-red: #ffebee;
+$avatarfill-pink: #fce4ec;
+$avatarfill-purple: #f3e5f5;
+$avatarfill-deep-purple: #ede7f6;
+$avatarfill-indigo: #e8eaf6;
+$avatarfill-blue: #e3f2fd;
+$avatarfill-light-blue: #e1f5fe;
+$avatarfill-cyan: #e0f7fa;
+$avatarfill-teal: #e0f2f1;
+$avatarfill-green: #e8f5e9;
+$avatarfill-light-green: #f1f8e9;
+$avatarfill-lime: #f9fbe7;
+$avatarfill-yellow: #fffde7;
+$avatarfill-amber: #fff8e1;
+$avatarfill-orange: #fff3e0;
+$avatarfill-deep-orange: #fbe9e7;
+$avatarfill-brown: #efebe9;
+$avatarfill-gray: #fafafa;
+$avatarfill-blue-gray: #eceff1;
+
+@mixin colorThemeTransition() {
+  transition: background-color 0.3s, color 0.3s;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  -moz-transition: background-color 0.3s, color 0.3s;
+  -ms-transition: background-color 0.3s, color 0.3s;
+  -o-transition: background-color 0.3s, color 0.3s;
+}

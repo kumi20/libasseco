@@ -1,0 +1,504 @@
+@import "./colors";
+@import "./fonts";
+
+body {
+  --text-box-margin-bottom: 6px;
+  --tab-container-margin-top: 10px;
+}
+
+@mixin keepSpaceFromHeader() {
+  margin-top: 24px;
+}
+
+@mixin formLabel() {
+  display: flex;
+  justify-content: flex-end;
+  justify-self: end;
+  padding-top: 6px;
+  min-width: 140px;
+  max-width: 360px;
+  flex: 0 1 140px;
+  text-align: right;
+  @media (min-width: 1001px) {
+    margin-right: var(--form-label-margin-left, 12px);
+    margin-left: var(--form-label-margin-left, 12px);
+  }
+}
+
+@mixin formControl() {
+  flex: 1 0 100%;
+  min-width: 276px;
+  min-height: 26px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 6px;
+
+  & > .btn-secondary-only-icon {
+    margin-left: 0px !important;
+  }
+
+  //   &:has(.dx-switch) {
+  // .dx-textbox {
+  //     width: calc(100% - 27px) !important;
+  //     max-width: calc(100% - 27px) !important;
+  //   }
+  //   }
+}
+
+@mixin withTextArea() {
+  .dx-textbox {
+    // min-height: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+.dx-form-group-caption {
+  font-size: 0.875rem;
+  line-height: 16px;
+  font-weight: 700;
+  color: var(--text-light-gray, $text-light-gray);
+}
+
+.dx-field-item-help-text,
+.dx-field-item-label-text {
+  color: var(--text-light-gray, $text-light-gray);
+  font-weight: 500;
+}
+
+.text-area-100 .dx-textarea {
+  max-width: 100%;
+}
+
+.radio-group-pad {
+  padding-top: 6px;
+}
+
+.min-100 .dx-widget {
+  min-height: 100px;
+}
+
+.form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  @include keepSpaceFromHeader();
+}
+
+.form-1-column {
+  .form-columns {
+    display: grid;
+    grid-template-columns:
+      [label-start] fit-content(var(--form-label-max-width))
+      [control-start] 1fr [switch-start] var(--form-switch-width)
+      [switch-end];
+    // flex-direction: column;
+    // align-items: center;
+    // gap: 24px;
+    padding-top: var(--form-header-top-distance, 24px);
+    min-width: calc(
+      var(--form-label-margin-left) + 140px + var(--form-label-margin-right) +
+        276px + 27px
+    );
+    max-width: calc(
+      var(--form-label-margin-left) + var(--form-label-max-width) +
+        var(--form-label-margin-right) + 276px + 27px
+    );
+    width: fit-content;
+    margin: auto;
+    gap: 0;
+    .form-columns__separator {
+      display: none;
+    }
+    .form-column {
+      // @media (min-width: 1001px) {
+      //   display: grid;
+      //   grid-template-columns: subgrid;
+      // }
+
+      &.form-column.form-column__right,
+      &.form-column.form-column__left {
+        grid-column: 1 / -1;
+      }
+      &.span-2 {
+        @media (min-width: 1001px) {
+          min-width: calc(
+            var(--form-column-min-width) * 2 + var(--form-column-gap) +
+              var(--form-column-gap) + 1px + 13px
+          );
+          max-width: calc(
+            var(--form-column-max-width) * 2 + var(--form-column-gap) +
+              var(--form-column-gap) + 1px + 13px
+          );
+          grid-column: 1 /5;
+        }
+        // margin-right: 13px;
+        // justify-self: center;
+      }
+    }
+
+    &:first-of-type {
+      padding-top: calc(
+        var(--form-header-top-distance, 24px) -
+          var(--tab-container-margin-top, 10px)
+      );
+    }
+    .form-column ~ .form-column:has(.form-column__header) {
+      padding-top: var(--form-header-top-distance, 24px);
+    }
+
+    @media (max-width: 1000px) {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+    }
+
+    .form-column.form-column__fill {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .form-columns:has(.form-column__full-width) {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.form-2-columns {
+  .form-columns .form-column {
+    &.span-2 {
+      min-width: calc(
+        var(--form-column-min-width) * 2 + var(--form-column-gap) +
+          var(--form-column-gap) + 1px + 13px
+      );
+      max-width: calc(
+        var(--form-column-max-width) * 2 + var(--form-column-gap) +
+          var(--form-column-gap) + 1px + 13px
+      );
+      grid-column: 2 / 5;
+      margin-right: 13px;
+      justify-self: center;
+      width: 100%;
+    }
+
+    &.form-column__fill {
+      grid-column: 2 / 5;
+      width: 100%;
+      min-width: 100%;
+    }
+
+    &.no-gap-after {
+      margin-bottom: calc(-1 * var(--form-header-top-distance, 24px));
+    }
+  }
+}
+
+.form-columns {
+  --text-box-margin-bottom: 0px;
+  --form-header-top-distance: 24px;
+  --form-label-max-width: 360px;
+  --form-switch-width: 21px;
+  --form-label-margin-left: 12px;
+  --form-label-margin-right: 12px;
+  --form-item-gap: 6px;
+  --form-column-gap: 30px;
+  --form-column-min-width: calc(
+    var(--form-label-margin-left) + 140px + var(--form-label-margin-right) +
+      276px + 27px
+  );
+  --form-column-max-width: calc(
+    var(--form-label-margin-left) + var(--form-label-max-width) +
+      var(--form-label-margin-right) + 276px + 27px
+  );
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  padding-top: var(--form-header-top-distance, 24px);
+  padding-bottom: var(--form-header-top-distance, 24px);
+  gap: var(--form-header-top-distance, 24px) var(--form-column-gap, 30px);
+
+  // grid test
+  display: grid;
+  grid-template-columns: 1fr auto 1px auto 1fr;
+
+  .form-column.form-column__left {
+    grid-column: 2 / 3;
+    justify-self: end;
+  }
+  .form-columns__separator {
+    grid-column: 3 / 4;
+  }
+
+  .form-column.form-column__right {
+    grid-column: 4 / 5;
+    justify-self: start;
+  }
+
+  &:first-of-type {
+    padding-top: calc(
+      var(--form-header-top-distance, 24px) -
+        var(--tab-container-margin-top, 10px)
+    );
+  }
+
+  .form-columns__separator {
+    width: 1px;
+    background-color: var(--neutral-80, $neutral-80);
+    min-height: 100%;
+    justify-self: center;
+  }
+
+  /* ukrywa pionowy separator, jeśli kolumny posiadają nagłówki */
+  &:has(.form-column__header) {
+    .form-columns__separator {
+      // background-color: var(--neutral-100, $neutral-100);
+    }
+  }
+
+  .form-column {
+    &.form-column__left {
+      &.has-border {
+        border-right: 1px solid var(--neutral-80, $neutral-80);
+      }
+    }
+
+    &.form-column__right {
+      &.has-border {
+        border-left: 1px solid var(--neutral-80, $neutral-80);
+      }
+    }
+
+    &.form-column__full-width {
+      grid-column: 1/-1;
+      // max-width: 973px;
+      width: 100%;
+      max-width: 100%;
+      .form-column__item {
+        @media (min-width: 1001px) {
+          min-width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+
+    @media (max-width: 1000px) {
+      width: 100%;
+    }
+    @media (min-width: 1001px) {
+      // min-width: var(--form-column-min-width);
+      max-width: var(--form-column-max-width);
+    }
+    display: grid;
+    grid-template-columns:
+      [label-start] fit-content(var(--form-label-max-width))
+      [control-start] 1fr
+      [switch-start] var(--form-switch-width) [switch-end];
+    grid-auto-rows: min-content;
+
+    .form-column__item {
+      display: grid;
+      grid-column: label-start / switch-end;
+      padding-bottom: var(--form-item-gap, 6px);
+
+      &:not(:last-child) {
+        padding-bottom: var(--form-item-gap, 6px);
+      }
+
+      :last-child {
+        padding-bottom: 0;
+      }
+
+      @media (max-width: 1000px) {
+        grid-template:
+          "label switch" auto
+          "control control" 1fr / auto 21px;
+      }
+
+      @media (min-width: 1001px) {
+        min-width: calc(
+          var(--form-label-margin-left) + 140px + var(--form-label-margin-right) +
+            276px + 27px
+        );
+        max-width: calc(
+          var(--form-label-margin-left) + var(--form-label-max-width) +
+            var(--form-label-margin-right) + 276px + 27px
+        );
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-gap: 0px;
+        align-items: flex-start;
+        margin-bottom: auto;
+      }
+    }
+
+    .form-column__header {
+      &:not(:nth-child(1)) {
+        padding-top: calc(
+          var(--form-header-top-distance, 24px) - var(--form-item-gap, 6px)
+        );
+      }
+      grid-column: 1 / -1;
+      font-size: 0.75rem;
+      line-height: 16px;
+      font-weight: 500;
+      font-family: $Roboto-Medium;
+      color: var(--text-light-gray, $text-light-gray);
+      margin-bottom: 16px;
+      padding-bottom: 9px;
+
+      &:not(.no-border) {
+        border-bottom: 1px solid var(--neutral-80, $neutral-80);
+      }
+    }
+
+    .form-column__item > label {
+      @media (max-width: 1000px) {
+        grid-area: label;
+        margin-left: 0;
+        justify-content: flex-start;
+        justify-self: start;
+      }
+      @media (min-width: 1001px) {
+        grid-column-start: label-start;
+        grid-column-end: control-start;
+      }
+      @include formLabel();
+    }
+
+    .form-control {
+      & > * {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+      }
+
+      *:has(.a-hyper-link) {
+        display: flex;
+        gap: 6px;
+        flex: 0 0 50%;
+      }
+
+      & > label {
+        font-weight: 400;
+        font-family: $Roboto;
+      }
+
+      & > * + label {
+        font-weight: 400;
+        font-family: $Roboto-Medium;
+        margin-left: calc(13px - var(--form-item-gap)) !important;
+      }
+
+      & > label + * {
+        margin-left: calc(13px - var(--form-item-gap)) !important;
+      }
+
+      &.two-equal-columns {
+        &:not(.flex-column) > *:first-child,
+        &:not(.flex-column) > *:not(:first-child) {
+          flex: 1 1 calc(50% - var(--form-item-gap, 6px));
+          display: grid;
+          flex-direction: column;
+          gap: var(--form-item-gap, 6px);
+        }
+      }
+
+      &:not(.flex-column) > *:not(:first-child) {
+        flex: 0 1 37px;
+      }
+      @media (max-width: 1000px) {
+        grid-area: control;
+        width: 100%;
+
+        &.switch-as-control {
+          grid-area: switch;
+        }
+      }
+      @media (min-width: 1001px) {
+        width: 276px;
+        grid-column-start: control-start;
+        grid-column-end: switch-start;
+
+        dx-drop-down-box {
+          width: auto !important;
+        }
+
+        .dx-textarea:not(.dictionary) {
+          margin-bottom: var(--form-item-gap, 6px);
+        }
+
+        &.form-control__full-width {
+          grid-column-start: label-start;
+          grid-column-end: switch-end;
+          width: 100%;
+
+          .dx-textarea {
+            width: 100%;
+            max-width: 100%;
+          }
+        }
+
+        &.form-control__end-on-switch {
+          grid-column-start: control-start;
+          grid-column-end: switch-start;
+
+          .dx-textarea {
+            width: 100%;
+            max-width: 100%;
+          }
+        }
+      }
+
+      &:has(.btn-as-dropdown-icon) {
+        gap: 0;
+        .btn-as-dropdown-icon {
+          position: static;
+        }
+      }
+    }
+
+    label + .form-control.form-control__full-width {
+      grid-column-start: control-start;
+    }
+
+    .dx-switch,
+    .form-control__switch {
+      @media (max-width: 1000px) {
+        grid-area: switch;
+      }
+      @media (min-width: 1001px) {
+        padding-left: 6px;
+      }
+      grid-column: switch-start / switch-end;
+    }
+
+    .form-control .dx-switch,
+    .form-control .form-control__switch {
+      @media (min-width: 1001px) {
+        padding-left: 0;
+      }
+    }
+
+    app-description-dictionary {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .dx-accordion-item-body {
+      padding: var(--tab-container-margin-top, 10px) 0 var(--form-item-gap, 6px);
+    }
+  }
+}
+
+.dx-accordion-item-body:has(.form-columns) {
+  padding-top: 14px;
+}
+
+.form-control {
+  @include formControl();
+  &.with-text-area {
+    @include withTextArea();
+  }
+}
